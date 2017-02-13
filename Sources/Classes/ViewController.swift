@@ -113,7 +113,7 @@ public class ViewController:UIViewController {
         frame.origin.y = height
 
         if imageLoader == nil {
-            imageLoader = PhotoSlider.KingfisherImageLoader()
+            imageLoader = PhotoSlider.PhotoSliderSDImageLoader()
         }
 
         for imageResource in imageResources()! {
