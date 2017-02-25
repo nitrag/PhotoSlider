@@ -30,11 +30,12 @@ class PhotoSliderSDImageLoader: PhotoSlider.ImageLoader {
         imageView?.sd_setImage(
             with: url,
             placeholderImage: nil,
-            options: SDWebImageOptions.retryFailed,
-            progress: { (receivedSize, totalSize) in
+            options: .retryFailed,
+            progress: { (receivedSize, totalSize, _) in
                 progress(receivedSize, totalSize)
-        }, completed: { (image, _, _, _) in
-            completion(image)
+        },
+            completed: { (image, _, _, _) in
+                completion(image)
         })
     }
 }
